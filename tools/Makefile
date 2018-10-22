@@ -33,7 +33,9 @@ tools-$(CONFIG_TARGET_apm821xx)$(CONFIG_TARGET_gemini) += genext2fs
 tools-$(CONFIG_TARGET_ath79) += lzma-old squashfs
 tools-$(CONFIG_TARGET_mxs) += elftosb sdimage
 tools-$(CONFIG_TARGET_tegra) += cbootimage cbootimage-configs
+ifneq ($(GNU_HOST_NAME),x86_64-linux-gnux32)
 tools-$(CONFIG_TARGET_x86) += qemu
+endif
 tools-$(CONFIG_USES_MINOR) += kernel2minor
 tools-$(CONFIG_USE_SPARSE) += sparse
 
